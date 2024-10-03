@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>KSPCA</title>
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+  <link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+	<link rel="stylesheet" href="css/materialize.css">
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/index_v2.css">
+
+</head>
+<body>
+
+	<nav>
+		<div class=" topmenu left_menu">
+
+		</div>
+		<div class=" topmenu centered_menu animate__backInDown">
+			FEEDBACK
+		</div>
+		<div class=" topmenu right_menu">
+    <a href="index.html" ><i class="fa fa-home fa-2x"></i></a>
+    </div>
+		 </nav>
+
+
+ <div class="main_body">
+  <div class="row parcel_form">
+
+<form id="data_form">
+
+
+   <h1>Personal Information</h1>
+        <div class="input-field col s12">
+          <span>1. Name</span><br>
+            <input id="sub_1_1" name="sub_1_1" placeholder="Enter your name" type="text">
+        </div>
+        <div class="input-field col s12">
+          <span>2. Email(Optional)</span><br>
+            <input id="sub_1_2" name="sub_1_2" placeholder="Enter your email" type="email">
+        </div>
+        <div class="input-field col s12">
+          <span>3. Phone Number(Optional)</span><br>
+            <input id="sub_1_3" name="sub_1_3" placeholder="Enter phone number" type="tel">
+        </div>
+
+        <h1>Membership and Onboarding</h1>
+        <div class="input-field col s12">
+          <span>1. Do you know about the KSPCA?</span><br>
+          <select
+          name="sub_1_4"
+          id="sub_1_4"
+          style="display: block;"
+        >
+          <option value="">Select your answer</option>
+          <option id="yes" value="yes">
+            YES
+          </option>
+          <option id="no" value="no">
+            NO
+          </option>
+        </select>
+        </div>
+
+        <div class="input-field col s12">
+          <span>2. How did you hear about KSPCA?</span><br>
+          <select
+          name="sub_1_19"
+          id="sub_1_19"
+          style="display: block;"
+        >
+          <option value="">Select your answer</option>
+          <option id="social_media" value="social media">
+            Social Media
+          </option>
+          <option id="word_mouth" value="word of mouth">
+            Word of Mouth
+          </option>
+          <option id="events" value="events">
+            Events
+          </option>
+          <option id="others_4" value="others">
+            Others
+          </option>
+        </select>
+        </div>
+
+        <div class="input-field col s12" id="hide_container_one" style="display: none;">
+          <span>2.b Others</span><br>
+            <input id="sub_1_20" name="sub_1_20" placeholder="Specify" type="text">
+        </div>
+
+
+
+        <div class="input-field col s12">
+          <span>3. Are you a member of KSPCA?</span><br>
+          <select
+          name="sub_1_5"
+          id="sub_1_5"
+          style="display: block;"
+        >
+          <option value="">Select your answer</option>
+          <option id="yes" value="yes">
+            Yes
+          </option>
+          <option id="no" value="no">
+            No
+          </option>
+          <option id="pass" value="pass">
+            Pass
+          </option>
+        </select>
+        </div>
+
+        <div class="input-field col s12">
+          <span>4. Are you interested in becoming a member of KSPCA?</span><br>
+          <select
+          name="sub_1_6"
+          id="sub_1_6"
+          style="display: block;"
+        >
+          <option value="">Select your answer</option>
+          <option id="yes" value="yes">
+            Yes, I would like to become a member
+          </option>
+          <option id="no_6" value="no">
+            No, I am not interested at the moment
+          </option>
+        </select>
+        </div>
+
+        <div class="input-field col s12" id="hide_container_two" style="display: none;">
+          <span>4b.If no, what would make them interested?</span><br>
+            <input id="sub_1_7" name="sub_1_7" placeholder="Enter your answer" type="text">
+        </div>
+
+        <div class="input-field col s12">
+          <span>5. Would you like to receive updates from KSPCA?</span><br>
+          <select
+          name="sub_1_8"
+          id="sub_1_8"
+          style="display: block;"
+        >
+          <option value="">Select your answer</option>
+          <option id="yes" value="yes">
+            Yes, please keep me informed.
+          </option>
+          <option id="no" value="no">
+            No, I prefer not to receive updates.
+          </option>
+        </select>
+        </div>
+
+        <h1>Donations and Preferences</h1>
+
+        <div class="input-field col s12">
+          <span>1. Are you aware you can support KSPCA through donations?</span><br>
+          <select
+          name="sub_1_9"
+          id="sub_1_9"
+          style="display: block;"
+        >
+          <option value="">Select your answer</option>
+          <option id="yes" value="yes">
+            Yes
+          </option>
+          <option id="no" value="no">
+            No
+          </option>
+          <option id="pass" value="pass">
+            Pass
+          </option>
+        </select>
+        </div>
+
+        <div class="input-field col s12">
+          <span>2 .Are you aware that donating a small amount regularly gives you membership and access to some great services?</span><br>
+          <select
+          name="sub_1_10"
+          id="sub_1_10"
+          style="display: block;"
+        >
+          <option value="">Select your answer</option>
+          <option id="yes" value="yes">
+            Yes
+          </option>
+          <option id="no" value="no">
+            No
+          </option>
+
+        </select>
+        </div>
+
+        <div class="input-field col s12">
+          <span>3. Are you aware of the modes of donation to partner with KSPCA?</span><br>
+          <select
+          name="sub_1_11"
+          id="sub_1_11"
+          style="display: block;"
+        >
+          <option value="">Select your answer</option>
+          <option id="yes_11" value="yes">
+            Yes
+          </option>
+          <option id="no_11" value="no">
+            No
+          </option>
+
+        </select>
+        </div>
+
+        <div class="input-field col s12" id="hide_container_three" style="display: none;">
+          <span>3b. Modes of donations</span><br>
+          <select
+          name="sub_1_21"
+          id="sub_1_21"
+          style="display: block;"
+        >
+          <option value="">Select your answer</option>
+          <option id="m-pesa" value="m-pesa">
+            M-Pesa
+          </option>
+          <option id="bank" value="bank">
+            Bank
+          </option>
+          <option id="others_21" value="others">
+            Others
+          </option>
+        </select>
+        </div>
+
+        <div class="input-field col s12" id="hide_container_four" style="display: none;">
+          <span>3.b Others</span><br>
+            <input id="sub_1_12" name="sub_1_12" placeholder="Specify" type="text">
+        </div>
+
+
+        <div class="input-field col s12">
+          <span>4. What is your preferred donation method?</span><br>
+          <select
+          name="sub_1_13"
+          id="sub_1_13"
+          style="display: block;"
+        >
+          <option value="">Select your answer</option>
+          <option id="direct_bank" value="Direct Debit from Bank">
+            Direct Debit from Bank
+          </option>
+          <option id="" value="bank">
+            Safaricom App
+          </option>
+          <option id="others_13" value="others">
+            Others
+          </option>
+
+        </select>
+        </div>
+
+        <div class="input-field col s12" id="hide_container_five" style="display: none;">
+          <span>4.b Others</span><br>
+            <input id="sub_1_14" name="sub_1_14" placeholder="Specify" type="text">
+        </div>
+
+        <div class="input-field col s12">
+          <span>5. Please select your comfort level for donations to KSPCA:</span><br>
+          <select
+          name="sub_1_15"
+          id="sub_1_15"
+          style="display: block;"
+        >
+          <option value="">Select your answer</option>
+          <option id="Ksh 200" value="Ksh 200">
+            Ksh 200
+          </option>
+          <option id="" value="Ksh 500">
+            Ksh 500
+          </option>
+          <option id="" value="Ksh 1000">
+            Ksh 1000
+          </option>
+          <option id="others_15" value="others">
+            Others
+          </option>
+
+        </select>
+        </div>
+
+        <div class="input-field col s12" id="hide_container_six" style="display: none;">
+          <span>5.b Others</span><br>
+            <input id="sub_1_16" name="sub_1_16" placeholder="Specify" type="text">
+        </div>
+
+        <h1>KSPCA Safaricom App Onboarding</h1>
+
+        <div class="input-field col s12">
+          <span>1. How would you rate the simplicity of onboarding onto the KSPCA Safaricom App? (1 being very complex, five being very simple)</span><br>
+          <select
+          name="sub_1_17"
+          id="sub_1_17"
+          style="display: block;"
+        >
+          <option value="">Select your answer</option>
+          <option id="" value="1">
+            1
+          </option>
+          <option id="" value="2">
+            2
+          </option>
+          <option id="" value="3">
+            3
+          </option>
+          <option id="" value="4">
+            4
+          </option>
+          <option id="" value="5">
+            5
+          </option>
+
+        </select>
+        </div>
+
+        <h1>Additional Comments or Feedback</h1>
+        <div class="input-field col s12">
+          <span>1. Do you have any additional comments, suggestions, or feedback for KSPCA that you would like to share?</span><br>
+            <input id="sub_1_18" name="sub_1_18" placeholder="Additional feedback" type="text">
+        </div>
+
+           <div class="input-field col s12 center_it">
+        <button id="branding_btn" class="btn-large  margin-bottom waves-effect waves-light pick_color">  SUBMIT <i class="fa fa-send"></i></button>
+      </div>
+
+</form>
+
+
+
+
+
+
+  </div>
+
+ </div>
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/materialize.js"></script>
+<script type="text/javascript" src="js/localforage.min.js"></script>
+<script type="text/javascript" src="js/sweet.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript" src="util/api.js"></script>
+
+ <!-- <script type="text/javascript" src="js/index.js"></script> -->
+<!-- <script type="text/javascript" src="js/location.js"></script> -->
+
+</body>
+</html>

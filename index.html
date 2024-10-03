@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="yes" name="apple-touch-fullscreen">
+	<title>KSPCA</title>
+
+  <link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+
+  <!-- css animation -->
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
+
+	<link rel="stylesheet" href="css/materialize.css">
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/index_v2.css">
+
+
+</head>
+<body>
+
+
+  <div class="main_body card_container">
+
+
+      <div class="row" id="p_to center_it" style="text-align: center; ">
+
+        <div class="col s12 m12 ">
+          <div class="card-panel animate__backInDown">
+            <p>My name is Sylvia Mumbi, and I am a volunteer with KSPCA.
+              Welcome to oktober Fest.
+              To better understand our members' and clients' needs, we request a few minutes to get your feedback. We have a quick and easy questionnaire to gather insights on membership interest, KASPCA services, donations, preferences, and feedback on the onboarding process onto the KSPCA Safaricom App. Your responses will help us better engage and serve our clients and improve our services. Thank you for your participation!</p>
+            <br>
+            <a class="btn btn-small yellow darken-2" href="feedback.html">Proceed</a>
+          </div>
+        </div>
+         </div>
+  </div>
+
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/materialize.js"></script>
+<script type="text/javascript" src="js/localforage.min.js"></script>
+<script type="text/javascript" src="js/sweet.js"></script>
+
+<script type="text/javascript">
+
+
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+
+  M.AutoInit();
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems);
+  });
+
+
+</script>
+</body>
+</html>
