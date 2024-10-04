@@ -93,14 +93,10 @@ form.addEventListener(
     if(sub_1_1 === "" ){
         appNotifier("Please fill in all the required fields!")
     }else{
+      //  appending to the formData object created above
 
-        //  appending to the formData object created above
-
-
-
-
-    //    checking the consent
-    const { value: accept } = await Swal.fire({
+      //    checking the consent
+      const { value: accept } = await Swal.fire({
         title: "CONSENT",
         input: "checkbox",
         inputValue: 1,
@@ -112,35 +108,51 @@ form.addEventListener(
         `,
         inputValidator: (result) => {
           return !result && "You need to agree with T&C";
-        }
-
+        },
       });
 
-
       if (accept) {
+        // form submission
 
-        Toastify({
-            text: "Thank your for the feedback!",
-            duration: 3000,
-            newWindow: true,
-            close: true,
-            gravity: "top", // `top` or `bottom`
-            position: "center", // `left`, `center` or `right`
-            stopOnFocus: true, // Prevents dismissing of toast on hover
-            style: {
-              background: "linear-gradient(to right, #00b09b, #96c93d)",
-            },
-            onClick: function(){} // Callback after click
-          }).showToast();
+        setTimeout(() => {
+          fetch("https://iguru.co.ke/kspca/process/BM.php", {
+            method: "POST",
+            body: formData_one,
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (!data.error) {
+                Toastify({
+                  text: "Thank your for the feedback!",
+                  duration: 3000,
+                  newWindow: true,
+                  close: true,
+                  gravity: "top", // `top` or `bottom`
+                  position: "center", // `left`, `center` or `right`
+                  stopOnFocus: true, // Prevents dismissing of toast on hover
+                  style: {
+                    background: "linear-gradient(to right, #00b09b, #96c93d)",
+                  },
+                  onClick: function () {}, // Callback after click
+                }).showToast();
+                shouldProceed = false;
+              } else {
+              }
+            })
+            .catch((err) => {
+              if (err.message === "Failed to fetch") {
+                appNotifier("Network error, Please try again!");
+                shouldProceed = false;
+              } else {
+                appNotifier("Operation has not been completed!");
+              }
+            });
+        }, 0);
       }
 
-
-
-    inputs.forEach((input) => {
-      input.value = "";
-    });
-
-
+      inputs.forEach((input) => {
+        input.value = "";
+      });
     }
 
 
