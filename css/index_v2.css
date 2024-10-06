@@ -4,6 +4,24 @@
     --toastify-icon-color-error: #fff;
   }
 
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  /* font-family: "Nunito Sans", sans-serif; */
+  /* font-family: 'Roboto', sans-serif; */
+  background-image: url("../public/background/desktopPlain.jpg");
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-position: left top;
+  background-size: contain;
+  overflow-x: hidden;
+}
+
   .profile {
       display: flex;
       flex-direction: column;
@@ -15,11 +33,12 @@
     .card_container{
        display: flex;
        justify-content: center;
-       align-items: center;
+       margin-top: 50px;
     }
 
     .card-panel{
-        background-color: rgb(255, 252, 252);
+      box-shadow: none;
+        /* background-color: rgb(255, 252, 252); */
         animation: slide_down 2s ease-out forwards;
     }
 
@@ -423,6 +442,10 @@
         margin-top: 50px !important;
     }
 
+    .main_body{
+      margin-top: 150px;
+    }
+
  @keyframes slide_up {
     0% {
         transform: translateY(-40px);
@@ -476,3 +499,72 @@
         transform: translateY(0);
       }
     }
+
+    /* background image responsiveness */
+@media (min-width: 1080px){
+  .main_body{
+    margin-top: 300px;
+  }
+  body {
+    background-image: url("../public/background/desktopPlain.jpg");
+
+  }
+
+}
+
+@media (max-width: 1080px) {
+
+  body {
+    background-image: url("../public/background/768_main.jpg");
+  }
+}
+
+@media (max-width: 768px){
+  .main_body{
+    margin-top: 210px;
+  }
+  body {
+    background-image: url("../public/background/768_main.jpg")
+  }
+}
+
+@media (max-width: 598px) {
+  .main_body{
+    margin-top: 140px;
+  }
+}
+
+@media (max-width: 360px) {
+
+  body {
+    background-image: url("../public/background/360_main.jpg");
+  }
+}
+
+@media (max-width: 320px) {
+  body {
+    background-image: url("../public/background/320_main.jpg");
+  }
+}
+
+@media (min-height: 1080px) {
+  .main_body{
+    margin-top: 300px;
+  }
+
+  .card_container{
+    align-items: center;
+  }
+
+  .card_container p {
+    font-size: 24px;
+  }
+
+  .btn-small {
+    height: 54px;
+    line-height: 54px;
+    font-size: 15px;
+    padding: 0 28px;
+  }
+
+}

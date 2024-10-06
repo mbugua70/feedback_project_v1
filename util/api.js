@@ -1,9 +1,10 @@
 const form = document.getElementById("data_form");
 const inputs = document.querySelectorAll("input");
-const selectElContainer_1 = document.getElementById("sub_1_19")
-const selectElContainer_2 = document.getElementById("sub_1_6")
-const selectElContainer_3 = document.getElementById("sub_1_11")
-const selectElContainer_4 = document.getElementById("sub_1_21")
+const selectElements = document.querySelectorAll("select_els");
+const selectElContainer_1 = document.getElementById("sub_1_19");
+const selectElContainer_2 = document.getElementById("sub_1_6");
+const selectElContainer_3 = document.getElementById("sub_1_11");
+const selectElContainer_4 = document.getElementById("sub_1_21");
 const selectElContainer_5 = document.getElementById("sub_1_13");
 const selectElContainer_6 = document.getElementById("sub_1_15");
 
@@ -14,85 +15,102 @@ const hideContainerFour = document.getElementById("hide_container_four");
 const hideContainerFive = document.getElementById("hide_container_five");
 const hideContainerSix = document.getElementById("hide_container_six");
 
-
-
 // hide functionality
 
-selectElContainer_1.addEventListener("input",function(){
-    valueOne = $("#sub_1_19").val()
-    if($("#others_4").val() === valueOne){
+selectElContainer_1.addEventListener(
+  "input",
+  function () {
+    valueOne = $("#sub_1_19").val();
+    if ($("#others_4").val() === valueOne) {
       hideContainerOne.style.display = "block";
-    }else{
+    } else {
       hideContainerOne.style.display = "none";
     }
-    },false);
+  },
+  false
+);
 
-selectElContainer_2.addEventListener("input",function(){
-    valueOne = $("#sub_1_6").val()
-    if($("#no_6").val() === valueOne){
+selectElContainer_2.addEventListener(
+  "input",
+  function () {
+    valueOne = $("#sub_1_6").val();
+    if ($("#no_6").val() === valueOne) {
       hideContainerTwo.style.display = "block";
-    }else{
+    } else {
       hideContainerTwo.style.display = "none";
     }
-    },false);
+  },
+  false
+);
 
-
-selectElContainer_3.addEventListener("input",function(){
-    valueOne = $("#sub_1_11").val()
-    if($("#yes_11").val() === valueOne){
+selectElContainer_3.addEventListener(
+  "input",
+  function () {
+    valueOne = $("#sub_1_11").val();
+    if ($("#yes_11").val() === valueOne) {
       hideContainerThree.style.display = "block";
-    }else{
+    } else {
       hideContainerThree.style.display = "none";
     }
-    },false);
+  },
+  false
+);
 
-selectElContainer_4.addEventListener("input",function(){
-    valueOne = $("#sub_1_21").val()
-    if($("#others_21").val() === valueOne){
+selectElContainer_4.addEventListener(
+  "input",
+  function () {
+    valueOne = $("#sub_1_21").val();
+    if ($("#others_21").val() === valueOne) {
       hideContainerFour.style.display = "block";
-    }else{
+    } else {
       hideContainerFour.style.display = "none";
     }
-    },false);
+  },
+  false
+);
 
-
-selectElContainer_5.addEventListener("input",function(){
-    valueOne = $("#sub_1_13").val()
-    if($("#others_13").val() === valueOne){
+selectElContainer_5.addEventListener(
+  "input",
+  function () {
+    valueOne = $("#sub_1_13").val();
+    if ($("#others_13").val() === valueOne) {
       hideContainerFive.style.display = "block";
-    }else{
+    } else {
       hideContainerFive.style.display = "none";
     }
-    },false);
+  },
+  false
+);
 
-selectElContainer_6.addEventListener("input",function(){
-    valueOne = $("#sub_1_15").val()
-    if($("#others_15").val() === valueOne){
+selectElContainer_6.addEventListener(
+  "input",
+  function () {
+    valueOne = $("#sub_1_15").val();
+    if ($("#others_15").val() === valueOne) {
       hideContainerSix.style.display = "block";
-    }else{
+    } else {
       hideContainerSix.style.display = "none";
     }
-    },false);
+  },
+  false
+);
 
 form.addEventListener(
   "submit",
   async function (e) {
     e.preventDefault();
-    const place = "FLEET_OWNERS";
     const formData_one = new FormData(form);
 
-
-
     const sub_1_1 = formData_one.get("sub_1_1");
-    const sub_1_2 = formData_one.get("sub_1_2")
+    const sub_1_2 = formData_one.get("sub_1_2");
     const sub_1_3 = formData_one.get("sub_1_3");
     const sub_1_4 = formData_one.get("sub_1_4");
     const sub_1_5 = formData_one.get("sub_1_5");
     const sub_1_6 = formData_one.get("sub_1_6");
 
-    if(sub_1_1 === "" ){
-        appNotifier("Please fill in all the required fields!")
-    }else{
+    if (sub_1_1 === "") {
+      appNotifier("Please fill in all the required fields!");
+    } else {
       //  appending to the formData object created above
 
       //    checking the consent
@@ -127,8 +145,8 @@ form.addEventListener(
                   duration: 3000,
                   newWindow: true,
                   close: true,
-                  gravity: "top", // `top` or `bottom`
-                  position: "center", // `left`, `center` or `right`
+                  gravity: "top", // position the toast either top or bottom
+                  position: "center", // toast left or right or center of the page
                   stopOnFocus: true, // Prevents dismissing of toast on hover
                   style: {
                     background: "linear-gradient(to right, #00b09b, #96c93d)",
@@ -140,6 +158,7 @@ form.addEventListener(
               }
             })
             .catch((err) => {
+              console.log(err);
               if (err.message === "Failed to fetch") {
                 appNotifier("Network error, Please try again!");
                 shouldProceed = false;
@@ -153,10 +172,11 @@ form.addEventListener(
       inputs.forEach((input) => {
         input.value = "";
       });
+
+      selectElements.forEach((selectItems) => {
+        selectItems.value = "";
+      });
     }
-
-
-
   },
   false
 );
